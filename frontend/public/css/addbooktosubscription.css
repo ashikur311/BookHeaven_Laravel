@@ -1,0 +1,1121 @@
+:root {
+  --primary-color: #57abd2;
+  --primary-dark: #3d8eb4;
+  --secondary-color: #f8f5fc;
+  --accent-color: rgb(223, 219, 227);
+  --text-color: #333;
+  --text-light: #666;
+  --light-purple: #e6d9f2;
+  --dark-text: #212529;
+  --light-text: #f8f9fa;
+  --card-bg: #ffffff;
+  --aside-bg: #f0f2f5;
+  --nav-hover: #e0e0e0;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --border-color: #e0e0e0;
+  --hover-bg: #f5f5f5;
+  --even-row-bg: #f9f9f9;
+  --header-bg: #f0f0f0;
+  --header-text: #333;
+  --card-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  --plan-bg: linear-gradient(135deg, #57abd2 0%, #3d8eb4 100%);
+}
+
+.dark-mode {
+  --primary-color: #57abd2;
+  --primary-dark: #4a9bc1;
+  --secondary-color: #2d3748;
+  --accent-color: #4a5568;
+  --text-color: #f8f9fa;
+  --text-light: #a0aec0;
+  --light-purple: #4a5568;
+  --dark-text: #f8f9fa;
+  --light-text: #212529;
+  --card-bg: #1a202c;
+  --aside-bg: #1a202c;
+  --nav-hover: #4a5568;
+  --border-color: #4a5568;
+  --hover-bg: #2d3748;
+  --even-row-bg: #2d3748;
+  --header-bg: #1a202c;
+  --header-text: #f8f9fa;
+  --card-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  --plan-bg: linear-gradient(135deg, #1a3d4a 0%, #123140 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+main {
+  padding: 1.5rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Compact Plan Overview Section */
+.plan-overview {
+  background: var(--plan-bg);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.plan-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.plan-status {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.plan-details-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.plan-features {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 0.1rem;
+}
+
+.feature-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.plan-progress {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-item {
+  margin-bottom: 1rem;
+}
+
+.progress-item:last-child {
+  margin-bottom: 0;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.progress-title {
+  font-weight: 500;
+}
+
+.progress-value {
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: white;
+  border-radius: 3px;
+  width: 70%;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+}
+
+.days-left {
+  text-align: center;
+  padding: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.days-left-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.days-left-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Genre Sidebar with Block Style */
+.genre-sidebar {
+  width: 250px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 1rem;
+  height: fit-content;
+}
+
+.genre-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--primary-color);
+}
+
+.genre-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.genre-item {
+  padding: 0.6rem 0.8rem;
+  background-color: var(--hover-bg);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.genre-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.genre-item.active {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+/* Book Grid */
+.catalog-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.book-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.book-card {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.book-info {
+  padding: 1rem;
+}
+
+.book-title {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-author {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-rating {
+  color: var(--warning-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  margin-right: 0.3rem;
+}
+
+.add-button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Add Books Header Section */
+.add-books-header {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.add-books-header h2 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.add-audiobook-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.add-audiobook-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.add-audiobook-btn svg {
+  fill: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .plan-details-container {
+    flex-direction: column;
+  }
+
+  .plan-progress {
+    flex: 1;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .plan-features {
+    grid-template-columns: 1fr;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .catalog-container {
+    flex-direction: column;
+  }
+
+  .genre-sidebar {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .book-cover {
+    height: 200px;
+  }
+
+  .plan-title {
+    font-size: 1.3rem;
+  }
+
+  .feature-item {
+    padding: 0.6rem;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .plan-overview {
+    padding: 1rem;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .book-cover {
+    height: 180px;
+  }
+
+  .book-info {
+    padding: 0.8rem;
+  }
+
+  .book-title {
+    font-size: 0.95rem;
+  }
+
+  .book-author,
+  .book-rating {
+    font-size: 0.8rem;
+  }
+
+  .add-button {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .add-books-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .add-audiobook-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .book-cover {
+    height: 160px;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .feature-text {
+    width: 100%;
+  }
+}
+
+      :root {
+        --primary-color: #57abd2;
+        --primary-dark: #3d8eb4;
+        --secondary-color: #f8f5fc;
+        --accent-color: rgb(223, 219, 227);
+        --text-color: #333;
+        --text-light: #666;
+        --light-purple: #e6d9f2;
+        --dark-text: #212529;
+        --light-text: #f8f9fa;
+        --card-bg: #ffffff;
+        --aside-bg: #f0f2f5;
+        --nav-hover: #e0e0e0;
+        --success-color: #28a745;
+        --warning-color: #ffc107;
+        --danger-color: #dc3545;
+        --border-color: #e0e0e0;
+        --hover-bg: #f5f5f5;
+        --even-row-bg: #f9f9f9;
+        --header-bg: #f0f0f0;
+        --header-text: #333;
+        --card-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        --plan-bg: linear-gradient(135deg, #57abd2 0%, #3d8eb4 100%);
+    }
+
+    .dark-mode {
+        --primary-color: #57abd2;
+        --primary-dark: #4a9bc1;
+        --secondary-color: #2d3748;
+        --accent-color: #4a5568;
+        --text-color: #f8f9fa;
+        --text-light: #a0aec0;
+        --light-purple: #4a5568;
+        --dark-text: #f8f9fa;
+        --light-text: #212529;
+        --card-bg: #1a202c;
+        --aside-bg: #1a202c;
+        --nav-hover: #4a5568;
+        --border-color: #4a5568;
+        --hover-bg: #2d3748;
+        --even-row-bg: #2d3748;
+        --header-bg: #1a202c;
+        --header-text: #f8f9fa;
+        --card-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        --plan-bg: linear-gradient(135deg, #1a3d4a 0%, #123140 100%);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        padding: 1.5rem 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        flex: 1;
+    }
+
+    /* Error Message */
+    .error-message {
+        background-color: var(--danger-color);
+        color: white;
+        padding: 0.8rem 1rem;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .error-message svg {
+        fill: white;
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Compact Plan Overview Section */
+    .plan-overview {
+        background: var(--plan-bg);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+
+    .plan-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .plan-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .plan-status {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .plan-details-container {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .plan-features {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+        width: 18px;
+        height: 18px;
+        fill: white;
+    }
+
+    .feature-text {
+        flex: 1;
+    }
+
+    .feature-label {
+        font-size: 0.8rem;
+        opacity: 0.8;
+        margin-bottom: 0.1rem;
+    }
+
+    .feature-value {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .plan-progress {
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-item {
+        margin-bottom: 1rem;
+    }
+
+    .progress-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .progress-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .progress-title {
+        font-weight: 500;
+    }
+
+    .progress-value {
+        font-weight: 600;
+    }
+
+    .progress-bar {
+        height: 6px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 0.3rem;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background-color: white;
+        border-radius: 3px;
+    }
+
+    .progress-text {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .days-left {
+        text-align: center;
+        padding: 0.8rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    .days-left-value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.2rem;
+    }
+
+    .days-left-label {
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+
+    /* Add Books Header Section */
+    .add-books-header {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: var(--card-shadow);
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .add-books-header h2 {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        margin: 0;
+    }
+
+    .add-book-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+        white-space: nowrap;
+    }
+
+    .add-book-btn:hover {
+        background-color: var(--primary-dark);
+    }
+
+    .add-book-btn svg {
+        fill: white;
+    }
+
+    /* Audio Book Grid */
+    .catalog-container {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .book-grid {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .book-card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        overflow: hidden;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .book-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .book-cover {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .book-info {
+        padding: 1rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .book-title {
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .book-author {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .book-rating {
+        color: var(--warning-color);
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .star-icon {
+        margin-right: 0.3rem;
+    }
+
+    /* Audio Player Styles - Compact Version */
+    .audio-player {
+        width: 100%;
+        height: 36px; /* Reduced height */
+        margin: 0.5rem 0;
+        min-height: 36px; /* Ensures minimum height */
+    }
+
+    .audio-player::-webkit-media-controls-panel {
+        background-color: var(--primary-color);
+        border-radius: 5px;
+        height: 36px;
+    }
+
+    .audio-player::-webkit-media-controls-play-button,
+    .audio-player::-webkit-media-controls-mute-button {
+        filter: brightness(0) invert(1);
+    }
+
+    .audio-player::-webkit-media-controls-current-time-display,
+    .audio-player::-webkit-media-controls-time-remaining-display {
+        color: white;
+        font-size: 0.8rem;
+    }
+
+    .audio-player::-webkit-media-controls-timeline {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+    }
+
+    /* Hide download button */
+    .audio-player::-webkit-media-controls-download-button {
+        display: none !important;
+    }
+
+    .audio-player::-webkit-media-controls-enclosure {
+        border-radius: 5px;
+        height: 36px;
+    }
+
+    .add-button {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+        margin-top: auto;
+    }
+
+    .add-button:hover {
+        background-color: var(--primary-dark);
+    }
+
+    .add-button:disabled {
+        background-color: var(--text-light);
+        cursor: not-allowed;
+    }
+
+    /* Genre Sidebar */
+    .genre-sidebar {
+        width: 250px;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        padding: 1rem;
+        height: fit-content;
+    }
+
+    .genre-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--primary-color);
+    }
+
+    .genre-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .genre-item {
+        padding: 0.6rem 0.8rem;
+        background-color: var(--hover-bg);
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .genre-item:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+    .genre-item.active {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 500;
+    }
+
+    @media (max-width: 1200px) {
+        .plan-progress {
+            flex: 0 0 250px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .plan-details-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .plan-features {
+            grid-template-columns: 1fr;
+        }
+        
+        .plan-progress {
+            flex: 1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        main {
+            padding: 1rem;
+        }
+
+        .catalog-container {
+            flex-direction: column;
+        }
+
+        .genre-sidebar {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .book-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .book-cover {
+            height: 160px;
+        }
+
+        .audio-player {
+            height: 32px;
+            min-height: 32px;
+        }
+
+        .audio-player::-webkit-media-controls-panel,
+        .audio-player::-webkit-media-controls-enclosure {
+            height: 32px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .plan-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .book-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+
+        .book-cover {
+            height: 140px;
+        }
+
+        .book-info {
+            padding: 0.8rem;
+        }
+
+        .book-title {
+            font-size: 0.9rem;
+        }
+
+        .book-author, .book-rating {
+            font-size: 0.8rem;
+        }
+
+        .audio-player {
+            height: 28px;
+            min-height: 28px;
+            margin: 0.3rem 0;
+        }
+
+        .audio-player::-webkit-media-controls-panel,
+        .audio-player::-webkit-media-controls-enclosure {
+            height: 28px;
+        }
+
+        .add-button {
+            padding: 0.4rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .book-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .feature-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+            padding: 0.8rem 0.5rem;
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .feature-text {
+            width: 100%;
+        }
+    }
